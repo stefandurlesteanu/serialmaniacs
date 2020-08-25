@@ -1,16 +1,19 @@
 import React, { useContext } from 'react';
 import './App.css';
 import { SerialProvider, SerialContext } from './SerialContext';
+import ListedShows from './components/ListedShows'
 
 function App() {
 
-	const [serial, setSerial] = useContext(SerialContext);
+	const serial = useContext(SerialContext);
 
 	console.log(serial)
 
 	return (
 		<SerialProvider>
 			<div className="App">
+				<ListedShows />
+
 				{/* {serial.map((ser) => (
 					<>
 						<p>{ser.id}</p>
@@ -20,7 +23,7 @@ function App() {
 				))} */}
 			</div>
 		</SerialProvider>
-	);
+	)
 }
 
 export default App;
