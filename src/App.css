@@ -5,7 +5,22 @@
   text-decoration: none;
 }
 
+.App {
+  position: relative;
+  min-height: 100vh;
+}
+
+.contentWrap {
+  padding-bottom: 20rem;
+}
+
 .color-nav {
   background-color: #e6eed6;
   color: #a72608 !important;
+}
+
+@media (max-width: 768px) {
+  .contentWrap {
+    padding-bottom: 47rem;
+  }
 }
