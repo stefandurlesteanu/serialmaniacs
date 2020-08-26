@@ -20,7 +20,6 @@ export default function FrontVideo() {
 	}
 
 
-
 	return (
 		<>
 			<ReactPlayer

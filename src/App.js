@@ -1,11 +1,12 @@
 import React from 'react';
 import './App.css';
 import { SerialProvider } from './SerialContext';
-import ListedShows from './components/ListedShows'
+// import ListedShows from './components/ListedShows'
 import { default as Nav } from './components/layout/navBar'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from './components/layout/footer';
-import FrontVideo from './components/FrontVideo'
+import FrontVideo from './components/FrontVideo';
+import Genres from './components/Genres';
 
 function App() {
 
@@ -15,7 +16,7 @@ function App() {
 				<div className="contentWrap">
 					<Nav />
 					<FrontVideo />
-					<ListedShows />
+					<Genres />
 					<Footer />
 				</div>
 			</div>
