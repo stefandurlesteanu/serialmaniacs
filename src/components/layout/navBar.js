@@ -1,21 +1,30 @@
 import React from 'react'
 import { Navbar, Nav, NavDropdown, Form, FormControl, Button } from 'react-bootstrap'
+import brandLogo from '../layout/brandLogo.png'
 
 export default function navBar() {
 	return (
-		<Navbar bg="light" expand="lg">
-			<Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+		<Navbar className="color-nav" expand="lg">
+			<Navbar.Brand href="#home">
+				<img
+					src={brandLogo}
+					width="50"
+					height="50"
+					className="d-inline-block align-top"
+					alt="logo"
+				/>
+			</Navbar.Brand>
 			<Navbar.Toggle aria-controls="basic-navbar-nav" />
 			<Navbar.Collapse id="basic-navbar-nav">
 				<Nav className="mr-auto">
-					<Nav.Link href="#home">Home</Nav.Link>
-					<Nav.Link href="#link">Link</Nav.Link>
-					<NavDropdown title="Dropdown" id="basic-nav-dropdown">
-						<NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-						<NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-						<NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+					<Nav.Link href="#home">Shows</Nav.Link>
+					<Nav.Link href="#link">Genres</Nav.Link>
+					<NavDropdown title="More" id="basic-nav-dropdown">
+						<NavDropdown.Item href="#action/3.1">Best Shows</NavDropdown.Item>
+						<NavDropdown.Item href="#action/3.2">Most Wanted</NavDropdown.Item>
+						<NavDropdown.Item href="#action/3.3">ActorPedia</NavDropdown.Item>
 						<NavDropdown.Divider />
-						<NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+						<NavDropdown.Item href="#action/3.4">Contact Us</NavDropdown.Item>
 					</NavDropdown>
 				</Nav>
 				<Form inline>
