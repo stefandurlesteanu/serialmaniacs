@@ -11,9 +11,11 @@ function App() {
 	return (
 		<SerialProvider>
 			<div className="App">
-				<Nav />
-				{/* <ListedShows /> */}
-				<Footer />
+				<div className="contentWrap">
+					<Nav />
+					<ListedShows />
+					<Footer />
+				</div>
 			</div>
 		</SerialProvider>
 	)
