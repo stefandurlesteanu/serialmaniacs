@@ -4,10 +4,9 @@ import { SerialContext } from '../SerialContext';
 
 export default function Genres() {
 
-	const { loadedSerial, loadingData } = useContext(SerialContext);
+	const { loadedSerial, } = useContext(SerialContext);
 	const [serial,] = loadedSerial;
-	const [, setLoading] = loadingData;
-	const [load, setLoad] = useState(false)
+	const [, setLoad] = useState(false)
 	const [genres, setGenres] = useState([])
 
 	useEffect(() => {
@@ -31,23 +30,34 @@ export default function Genres() {
 
 
 	const loadingGenres = async (data) => {
+
 		let _genre = await Promise.all(data.map(async serial => {
 			return serial.genres
 		}))
 		let _genre2 = _genre.flat()
-		let _genre3 = new Set(_genre2)
+		let _genre3 = _genre2.filter((v, i, a) => a.indexOf(v) === i)
 		setGenres(_genre3)
-		return _genre2
 	}
+
+
 
 	return (
 
-		<div >{
-			genres[1]
-		}
-
-
-		</div >
+		<div>
+			{
+				genres.length === 0 ? <h1>Loading...</h1> : (
+					<>
+						{
+							genres.map((gen, i) => (
+								<div key={i}>
+									<p>{gen}</p>
+								</div>
+							))
+						}
+					</>
+				)
+			}
+		</div>
 	)
 }
 
