@@ -8,6 +8,7 @@ export const SerialProvider = props => {
 	const [serial, setSerial] = useState([]);
 	const [loading, setLoading] = useState(true)
 
+
 	useEffect(() => {
 		async function fetchData() {
 			let response = await getData(initialUrl);
