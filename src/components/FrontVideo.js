@@ -15,11 +15,8 @@ export default function FrontVideo() {
 
 
 	const nextVideo = e => {
-		console.log(video)
-		// let lastItem = video[0]
-		// let firstItem = video.slice(1, 4)
+		e.preventDefault();
 		setVideo(video => [...video.slice(1, 4), video[0]]);
-		// setItems(items => [...items, 'New Item']);
 	}
 
 
