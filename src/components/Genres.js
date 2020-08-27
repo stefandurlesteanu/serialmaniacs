@@ -1,5 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { SerialContext } from '../SerialContext';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
+import { Container, Col, Card } from 'react-bootstrap';
 
 
 export default function Genres() {
@@ -53,7 +57,13 @@ export default function Genres() {
 
 
 
-
+	var settings = {
+		dots: false,
+		infinite: true,
+		speed: 500,
+		slidesToShow: 4,
+		slidesToScroll: 1
+	};
 
 
 
@@ -67,16 +77,38 @@ export default function Genres() {
 					<>
 						{
 							Object.keys(genres).map((gen, i) => (
-								< GenreCard key={i} gen={gen} />
-
+								<Container key={i}>
+									<div className="clearfix mt-5 mb-2">
+										<h4 className="float-left">
+											{gen}
+										</h4>
+									</div>
+									<Slider {...settings} style={{ marginBottom: "30px" }}>
+										{genres[gen].map(g => {
+											return (
+												<React.Fragment>
+													<Col>
+														<Card>
+															<Card.Img
+																variant="top"
+																src={g.image}
+																alt=""
+															/>
+															<Card.Body></Card.Body>
+														</Card>
+													</Col>
+												</React.Fragment>
+											)
+										})}
+									</Slider>
+								</Container>
 							))
 						}
 					</>
 				)
 			}
-		</div>
+		</div >
 	)
 }
 
 
-// 

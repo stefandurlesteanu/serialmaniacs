@@ -7,6 +7,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from './components/layout/footer';
 import FrontVideo from './components/FrontVideo';
 import Genres from './components/Genres';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { HomeWrapper } from './components/style'
 
 function App() {
 

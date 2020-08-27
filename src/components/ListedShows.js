@@ -7,7 +7,7 @@ export default function ListedShows() {
 	const [serial,] = loadedSerial;
 	const [, setLoading] = loadingData;
 	const [load, setLoad] = useState(false)
-
+	// console.log(serial)
 
 	useEffect(() => {
 		function waitForElement() {
