@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import ReactPlayer from "react-player";
-import { Button } from 'react-bootstrap';
+import { Button, Container } from 'react-bootstrap';
 
 
 export default function FrontVideo() {
@@ -21,7 +21,7 @@ export default function FrontVideo() {
 
 
 	return (
-		<>
+		<Container>
 			<ReactPlayer
 				url={video[0]}
 				playing={false}
@@ -29,6 +29,6 @@ export default function FrontVideo() {
 				controls={true}
 			/>
 			<Button onClick={nextVideo}>Next Trailer</Button>{' '}
-		</>
+		</Container>
 	)
 }

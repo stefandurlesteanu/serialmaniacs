@@ -8,10 +8,10 @@ import { ShowPage } from "./components/ShowPage";
 import Footer from "./components/layout/footer";
 import { default as Nav } from "./components/layout/navBar";
 import "bootstrap/dist/css/bootstrap.min.css";
-import FrontVideo from './components/FrontVideo';
 import Genres from './components/Genres';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import FrontPage from './components/pages/FrontPage'
 
 
 
@@ -23,14 +23,14 @@ function App() {
 					<div className="contentWrap">
 						<Nav />
 						<Route exact path="/">
-							<Home />
-
+							<FrontPage />
 						</Route>
 						<Route path="/shows">
 							<ListedShows />
 						</Route>
 						<Route path="/show/:id" component={ShowPage} />
-						<Footer />
+						<Route exact path="/genres" component={Genres} />
+						<Footer id="footerLink" />
 					</div>
 				</Router>
 			</div>

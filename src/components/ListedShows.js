@@ -3,87 +3,40 @@ import { SerialContext } from "../SerialContext";
 import Card from "../components/Card";
 
 export default function ListedShows() {
-<<<<<<< HEAD
-  const { loadedSerial, loadingData } = useContext(SerialContext);
-  const [serial] = loadedSerial;
-  const [, setLoading] = loadingData;
-  const [load, setLoad] = useState(false);
-  console.log(serial);
-
-  useEffect(() => {
-    function waitForElement() {
-      if (
-        typeof serial !== "undefined" &&
-        serial != null &&
-        serial.length != null &&
-        serial.length > 0
-      ) {
-        setLoad(false);
-      } else {
-        setTimeout(waitForElement, 250);
-      }
-    }
-
-    waitForElement();
-  }, [load, serial, setLoading]);
-
-  return (
-    <div>
-      {load ? (
-        <h1>'Loading ...'</h1>
-      ) : (
-        <>
-          {serial.map((ser) => (
-            <Card shows={ser}></Card>
-          ))}
-        </>
-      )}
-    </div>
-  );
-=======
-
 	const { loadedSerial, loadingData } = useContext(SerialContext);
-	const [serial,] = loadedSerial;
+	const [serial] = loadedSerial;
 	const [, setLoading] = loadingData;
-	const [load, setLoad] = useState(false)
-	// console.log(serial)
+	const [load, setLoad] = useState(false);
+	console.log(serial);
 
 	useEffect(() => {
 		function waitForElement() {
-			if (typeof serial !== "undefined" && serial != null && serial.length != null
-				&& serial.length > 0) {
-				setLoad(false)
-			}
-			else {
+			if (
+				typeof serial !== "undefined" &&
+				serial != null &&
+				serial.length != null &&
+				serial.length > 0
+			) {
+				setLoad(false);
+			} else {
 				setTimeout(waitForElement, 250);
 			}
 		}
 
 		waitForElement();
-
-	}, [load, serial, setLoading])
-
-
+	}, [load, serial, setLoading]);
 
 	return (
 		<div>
-
-			{
-				load ? <h1>'Loading ...'</h1> : (
+			{load ? (
+				<h1>'Loading ...'</h1>
+			) : (
 					<>
-						{
-							serial.map((ser) => (
-								<div key={ser.id}>
-									<p>{ser.id}</p>
-									<p>{ser.name}</p>
-									<p>{ser.image.original}</p>
-								</div>
-							))
-						}
+						{serial.map((ser) => (
+							<Card shows={ser}></Card>
+						))}
 					</>
-				)
-			}
+				)}
 		</div>
-	)
->>>>>>> genresComponent
+	);
 }

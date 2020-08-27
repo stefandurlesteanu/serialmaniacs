@@ -28,7 +28,7 @@ const CardData = styled.div`
   height: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-size: 1rem;
+  font-size: .5rem;
   flex: 3 1 55%;
 `;
 
@@ -47,46 +47,46 @@ const Button = styled.button`
 `;
 
 const Card = (props) => {
-  // console.log("!!!!!!!>>>>>" + props.shows);
-  const cutSummary =
-    props.shows.summary.length > 450
-      ? props.shows.summary.slice(0, 450) + " ..."
-      : props.shows.summary;
+	// console.log("!!!!!!!>>>>>" + props.shows);
+	const cutSummary =
+		props.shows.summary.length > 450
+			? props.shows.summary.slice(0, 450) + " ..."
+			: props.shows.summary;
 
-  console.log(cutSummary);
-  let content = (
-    <CardDesing>
-      {"      "}
-      <div
-        style={{
-          flex: "1 1 auto",
-          marginRight: "2rem",
-        }}
-      >
-        {" "}
-        <Image src={props.shows.image.medium} alt={""}></Image>
-      </div>
+	console.log(cutSummary);
+	let content = (
+		<CardDesing>
+			{"      "}
+			<div
+				style={{
+					flex: "1 1 auto",
+					marginRight: "2rem",
+				}}
+			>
+				{" "}
+				<Image src={props.shows.image.medium} alt={""}></Image>
+			</div>
 
-      <CardData>
-        <h2>Title: {props.shows.name}</h2>
-        <h3>Runtime: {props.shows.runtime} </h3>
-        <h4>
-          Summary:{" "}
-          <span
-            dangerouslySetInnerHTML={{
-              __html: cutSummary,
-            }}
-          ></span>{" "}
-        </h4>
-        <Link to={"/show/" + props.shows.id}>
-          {" "}
-          <Button> View more details </Button>
-        </Link>
-      </CardData>
-    </CardDesing>
-  );
+			<CardData>
+				<h2>Title: {props.shows.name}</h2>
+				<h3>Runtime: {props.shows.runtime} </h3>
+				<h4>
+					Summary:{" "}
+					<span
+						dangerouslySetInnerHTML={{
+							__html: cutSummary,
+						}}
+					></span>{" "}
+				</h4>
+				<Link to={"/show/" + props.shows.id}>
+					{" "}
+					<Button> View more details </Button>
+				</Link>
+			</CardData>
+		</CardDesing>
+	);
 
-  return content;
+	return content;
 };
 
 export default Card;
