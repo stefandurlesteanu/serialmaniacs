@@ -27,12 +27,5 @@ export function ShowPage({ match }) {
     fetchData();
   }, []);
 
-  // return <ShowCard serial={serial.serial} />;
-  return (
-    <div>
-      {serial.name}
-      {loading ? <div>Loading </div> : serial._embedded.cast[0].person.name}
-      {/* {serial.image.medium} */}
-    </div>
-  );
+  return <>{loading ? <div>Loading </div> : <ShowCard serial={serial} />}</>;
 }
