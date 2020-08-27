@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { getData } from './services/getData';
+import { ShowCard } from './ShowCard';
 
 export function ShowPage({ match }) {
   const url =

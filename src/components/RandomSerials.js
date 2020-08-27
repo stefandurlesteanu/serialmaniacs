@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getData } from "./services/getData";
 import {
-	Carousel,
 	Card,
 	ListGroupItem,
 	ListGroup,

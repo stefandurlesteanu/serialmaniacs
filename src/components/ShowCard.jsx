@@ -3,13 +3,13 @@ import CastComponent from './CastComponent';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import CardColumn from 'react-bootstrap/CardColumns';
+// import CardColumn from 'react-bootstrap/CardColumns';
 import './Show.css';
 
 export function ShowCard(props) {
   const [loadedData, setLoaded] = useState({});
   const [isLoading, setLoading] = useState(true);
-  const [cast, setCast] = useState({});
+  const [, setCast] = useState({});
 
   useEffect(() => {
     if (props.serial === 'undefined') {
@@ -19,7 +19,7 @@ export function ShowCard(props) {
       setLoading(false);
       setCast(props.serial._embedded.cast);
     }
-  }, []);
+  }, [props.serial]);
 
   const content = isLoading ? (
     <div>Loading ...</div>
@@ -29,7 +29,7 @@ export function ShowCard(props) {
         <Row md={2}>
           <Col>
             <div className='show-image-container'>
-              <img src={loadedData.image.original} />
+              <img src={loadedData.image.original} alt=""/>
             </div>
           </Col>
           <Col>
