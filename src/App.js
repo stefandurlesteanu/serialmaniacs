@@ -30,11 +30,13 @@ function App() {
 						</Route>
 						<Route path="/show/:id" component={ShowPage} />
 						<Route exact path="/genres" component={Genres} />
-						<Footer id="footerLink" />
+						<footer id="footerLink">
+							<Footer />
+						</footer>
 					</div>
 				</Router>
 			</div>
-		</SerialProvider>
+		</SerialProvider >
 	);
 }
 

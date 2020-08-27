@@ -14,13 +14,13 @@ export const HomeWrapper = styled.div`
 		background: yellow !important;
 	}
 
-	.khyYmw{
+	.inLkCu{
 		color: #333;
 		font-size: 14px;
 		font-family: 'arial';
 		font-weight: 600;
 	}
-	.khyYmw:hover{
+	.inLkCu:hover{
 		color: #000;
 		transition: 0.3s;
 	}
