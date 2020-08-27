@@ -4,7 +4,7 @@ import { getData } from './services/getData';
 export function ShowPage({ match }) {
   const url =
     'https://cors-anywhere.herokuapp.com/' +
-    'http://api.tvmaze.com/shows/' +
+    'https://api.tvmaze.com/shows/' +
     match.params.id +
     '?embed=cast';
   const [serial, setSerial] = useState({});

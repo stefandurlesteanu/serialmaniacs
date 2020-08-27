@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { getData } from "./services/getData";
 import { Card, ListGroupItem, ListGroup } from "react-bootstrap";
 const RandomSerials = (props) => {
-	const initialUrl = "http://api.tvmaze.com/shows";
+	const initialUrl = "https://api.tvmaze.com/shows";
 	const [serial, setSerial] = useState([]);
 	const [loading, setLoading] = useState(true);
 
