@@ -3,8 +3,17 @@ import { SerialContext } from '../SerialContext';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import { Container, Col, Card } from 'react-bootstrap';
+import { Container, Col, Card, Row } from 'react-bootstrap';
+import styled from 'styled-components';
+import '../../src/fontawesome'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
+
+const A = styled.a`
+	text-decoration: 'none';
+	color: 'red' !important;
+
+`
 
 export default function Genres() {
 
@@ -30,7 +39,7 @@ export default function Genres() {
 			let newList = []
 			for (let i = 0; i < serial.length; i++) {
 				if (serial[i].genres.includes(genre)) {
-					newList.push({ "name": serial[i].name, "image": serial[i].image.medium, "id": serial[i].id })
+					newList.push({ "name": serial[i].name, "image": serial[i].image.medium, "id": serial[i].id, "rating": serial[i].rating.average })
 				}
 			}
 			return newList
@@ -59,10 +68,10 @@ export default function Genres() {
 
 	var settings = {
 		dots: false,
-		infinite: true,
+		infinite: false,
 		speed: 500,
 		slidesToShow: 4,
-		slidesToScroll: 1
+		slidesToScroll: 4
 	};
 
 
@@ -88,13 +97,21 @@ export default function Genres() {
 											return (
 												<React.Fragment>
 													<Col>
-														<Card>
+														<Card border="transparent">
 															<Card.Img
 																variant="top"
 																src={g.image}
 																alt=""
 															/>
-															<Card.Body></Card.Body>
+															<Card.Body style={{ minHeight: '110px', paddingBottom: "0" }}>
+																<Row style={{ display: "flex", alignItems: "center" }}>
+																	<FontAwesomeIcon icon={['fa', 'star']} style={{ color: "gold" }} />
+																	<Col style={{ paddingLeft: "5px" }}>{g.rating}</Col>
+																</Row>
+																<Row>
+																	<Col style={{ textAlign: "left", paddingTop: "10px" }}><A href={`/show/${g.id}`}>{g.name}</A></Col>
+																</Row>
+															</Card.Body>
 														</Card>
 													</Col>
 												</React.Fragment>
