@@ -1,28 +1,25 @@
-import React from 'react';
-import './App.css';
-import { SerialProvider } from './SerialContext';
-import ListedShows from './components/ListedShows'
-import { default as Nav } from './components/layout/navBar'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Footer from './components/layout/footer';
-import FrontVideo from './components/FrontVideo'
+import React from "react";
+import "./App.css";
+import { SerialProvider } from "./SerialContext";
+import ListedShows from "./components/ListedShows";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Home from "./Home";
 
 function App() {
-
-	return (
-		<SerialProvider>
-			<div className="App">
-				<div className="contentWrap">
-					<Nav />
-					<FrontVideo />
-					<ListedShows />
-					<Footer />
-				</div>
-			</div>
-		</SerialProvider>
-	)
+  return (
+    <Router>
+      <SerialProvider>
+        <div className="App">
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/shows">
+            <ListedShows />
+          </Route>
+        </div>
+      </SerialProvider>
+    </Router>
+  );
 }
 
 export default App;
-
-

@@ -1,8 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
-import { SerialContext } from "../SerialContext";
-import Card from "../components/Card";
+import { SerialContext } from "./SerialContext";
 
-export default function ListedShows() {
+export default function Home() {
   const { loadedSerial, loadingData } = useContext(SerialContext);
   const [serial] = loadedSerial;
   const [, setLoading] = loadingData;
@@ -33,7 +32,11 @@ export default function ListedShows() {
       ) : (
         <>
           {serial.map((ser) => (
-            <Card shows={ser}></Card>
+            <div key={ser.id}>
+              <p>{ser.id}</p>
+              <p>{ser.name}</p>
+              <p>{ser.image.original}</p>
+            </div>
           ))}
         </>
       )}
