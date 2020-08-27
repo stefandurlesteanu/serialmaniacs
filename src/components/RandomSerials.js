@@ -1,6 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { getData } from "./services/getData";
-import { Card, ListGroupItem, ListGroup } from "react-bootstrap";
+import {
+	Carousel,
+	Card,
+	ListGroupItem,
+	ListGroup,
+	Col,
+	Row,
+} from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const RandomSerials = (props) => {
 	const initialUrl = "https://api.tvmaze.com/shows";
 	const [serial, setSerial] = useState([]);
@@ -37,29 +45,10 @@ const RandomSerials = (props) => {
 	}, []);
 
 	let content = (
-		// <Carousel>
-		//   {loading ? (
-		//     <h1>'Loading ...'</h1>
-		//   ) : (
-		//     <>
-		//       {" "}
-		//       {serial.map((ser) => (
-		//         <Carousel.Item>
-		//           <img className="d-block w-100" src={ser.image.medium} alt="" />
-		//           <Carousel.Caption>
-		//             <h3>{ser.name}</h3>
-		//             <p>{ser.id}</p>
-		//           </Carousel.Caption>
-		//         </Carousel.Item>
-		//       ))}
-		//     </>
-		//   )}
-		// </Carousel>
-
 		<Card
 			style={{
 				width: "20rem",
-				position: "relative",
+				position: "right",
 				top: "2px",
 			}}
 		>
@@ -69,33 +58,30 @@ const RandomSerials = (props) => {
 					<>
 						<Card.Img variant="top" src={serial[1].image.medium} />
 						<Card.Body>
-							<Card.Title>{serial[1].name}</Card.Title>
+							<Card.Title> Title: {serial[1].name}</Card.Title>
 							<Card.Text>Status: {serial[1].status}</Card.Text>
 						</Card.Body>
 						<ListGroup className="list-group-flush">
 							<ListGroupItem>Genres: {serial[1].genres[0]}</ListGroupItem>
-							<ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
-							<ListGroupItem>Vestibulum at eros</ListGroupItem>
+							<ListGroupItem>
+								{" "}
+								<Row>
+									<FontAwesomeIcon
+										icon={["fa", "star"]}
+										style={{ color: "gold" }}
+									/>
+									<Col style={{ paddingLeft: "5px" }}>
+										{serial[1].rating.average}
+									</Col>{" "}
+								</Row>
+							</ListGroupItem>
 						</ListGroup>
 						<Card.Body>
-							<Card.Link href="#">Card Link</Card.Link>
-							<Card.Link href="#">Another Link</Card.Link>
+							<Card.Link href={"/show/" + serial[1].id}>Details</Card.Link>
 						</Card.Body>{" "}
 					</>
 				)}
 		</Card>
-
-		// <div>
-		//   {loading ? (
-		//     <h1>'Loading ...'</h1>
-		//   ) : (
-		//     <>
-		//       {serial.map((ser) => (
-		//         <p>{ser.id}</p>
-		//       ))}
-		//     </>
-		//   )}
-		// </div>
 	);
 
 	return content;
