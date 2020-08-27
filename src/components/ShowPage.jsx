@@ -27,5 +27,5 @@ export function ShowPage({ match }) {
     fetchData();
   }, []);
 
-  return <>{loading ? <div>Loading </div> : <ShowCard serial={serial} />}</>;
+  return <>{loading ? <div>Loading... </div> : <ShowCard serial={serial} />}</>;
 }

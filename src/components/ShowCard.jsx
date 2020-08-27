@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import CastComponent from './CastComponent';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import CardColumn from 'react-bootstrap/CardColumns';
+import './Show.css';
 
 export function ShowCard(props) {
   const [loadedData, setLoaded] = useState({});
@@ -17,33 +22,54 @@ export function ShowCard(props) {
   }, []);
 
   const content = isLoading ? (
-    <div> Loading ...</div>
+    <div>Loading ...</div>
   ) : (
-    <div classname='show-container'>
-      <div className='show-image-container'>
-        <img src={loadedData.image.medium} />
+    <>
+      <Container fluid='true' className='show-container'>
+        <Row md={2}>
+          <Col>
+            <div className='show-image-container'>
+              <img src={loadedData.image.original} />
+            </div>
+          </Col>
+          <Col>
+            <div className='show-info-container'>
+              <h3 style={{ textAlign: 'center' }}>{loadedData.name}</h3>
+              <p>
+                Genres :
+                {loadedData.genres.map((genre) => {
+                  return <span> {genre}</span>;
+                })}
+              </p>
+              <p>Rating : {loadedData.rating.average}</p>
+              <p>Language : {loadedData.language}</p>
+              <p>Premiered : {loadedData.premiered}</p>
+              <p>Runtime : {loadedData.runtime}</p>
+              <p>
+                <a href={loadedData.officialSite}>{loadedData.officialSite}</a>
+              </p>
+              {
+                <span
+                  dangerouslySetInnerHTML={{
+                    __html: loadedData.summary,
+                  }}
+                ></span>
+              }
+            </div>
+          </Col>
+        </Row>
+      </Container>
+      <div className='cards-container'>
+        <Container>
+          <Row md={5}>
+            {loadedData._embedded.cast.map((actor) => {
+              console.log('actor in showcard', actor);
+              return <CastComponent actor={actor} />;
+            })}
+          </Row>
+        </Container>
       </div>
-      <div className='show-info-container'>
-        <p>{loadedData.name}</p>
-        <p>{loadedData.rating.average}</p>
-        <p>{loadedData.language}</p>
-        {
-          <span
-            dangerouslySetInnerHTML={{
-              __html: loadedData.summary,
-            }}
-          ></span>
-        }
-      </div>
-      <div>
-        <div className='cast-info-container'>
-          {loadedData._embedded.cast.map((actor) => {
-            console.log('actor in showcard', actor);
-            return <CastComponent actor={actor} />;
-          })}
-        </div>
-      </div>
-    </div>
+    </>
   );
   return content;
 }
