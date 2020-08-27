@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { SerialContext } from "./SerialContext";
+import RandomSerials from "./components/RandomSerials";
 
 export default function Home() {
   const { loadedSerial, loadingData } = useContext(SerialContext);
@@ -27,15 +28,14 @@ export default function Home() {
 
   return (
     <div>
+      <RandomSerials />
       {load ? (
         <h1>'Loading ...'</h1>
       ) : (
         <>
           {serial.map((ser) => (
             <div key={ser.id}>
-              <p>{ser.id}</p>
               <p>{ser.name}</p>
-              <p>{ser.image.original}</p>
             </div>
           ))}
         </>
