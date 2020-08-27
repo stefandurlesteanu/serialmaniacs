@@ -1,46 +1,75 @@
 import React, { useState, useEffect } from 'react';
+import CastComponent from './CastComponent';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import CardColumn from 'react-bootstrap/CardColumns';
+import './Show.css';
 
 export function ShowCard(props) {
-  console.log('in show card');
-
-  const [isLoading, setLoading] = useState(true);
   const [loadedData, setLoaded] = useState({});
+  const [isLoading, setLoading] = useState(true);
+  const [cast, setCast] = useState({});
 
   useEffect(() => {
-    console.log('in use efect');
-
-    setData();
-  }, [loadedData]);
-
-  async function setData() {
     if (props.serial === 'undefined') {
       setLoading(true);
-      console.log('s-a setat loading in ' + isLoading);
     } else {
-      console.log('s-a setat loadeddata in ' + props.serial);
-      setLoading(false);
       setLoaded(props.serial);
+      setLoading(false);
+      setCast(props.serial._embedded.cast);
     }
-  }
+  }, []);
 
-  console.log('inainte de  return');
-  return (
-    console.log('in return'),
-    console.log(loadedData),
-    isLoading ? (
-      <div> Loading ...</div>
-    ) : (
-      <div>
-        {/* <div className='show-image-container'>
-            <img src={loadedData.image.original} />
-          </div> */}
-        <div className='show-info-container'>
-          <p>{loadedData.name}</p>
-          {/* <p>{loadedData.rating.average}</p>
-            <p>{loadedData.language}</p>
-            <p>{loadedData.summary}</p> */}
-        </div>
+  const content = isLoading ? (
+    <div>Loading ...</div>
+  ) : (
+    <>
+      <Container fluid='true' className='show-container'>
+        <Row md={2}>
+          <Col>
+            <div className='show-image-container'>
+              <img src={loadedData.image.original} />
+            </div>
+          </Col>
+          <Col>
+            <div className='show-info-container'>
+              <h3 style={{ textAlign: 'center' }}>{loadedData.name}</h3>
+              <p>
+                Genres :
+                {loadedData.genres.map((genre) => {
+                  return <span> {genre}</span>;
+                })}
+              </p>
+              <p>Rating : {loadedData.rating.average}</p>
+              <p>Language : {loadedData.language}</p>
+              <p>Premiered : {loadedData.premiered}</p>
+              <p>Runtime : {loadedData.runtime}</p>
+              <p>
+                <a href={loadedData.officialSite}>{loadedData.officialSite}</a>
+              </p>
+              {
+                <span
+                  dangerouslySetInnerHTML={{
+                    __html: loadedData.summary,
+                  }}
+                ></span>
+              }
+            </div>
+          </Col>
+        </Row>
+      </Container>
+      <div className='cards-container'>
+        <Container>
+          <Row md={5}>
+            {loadedData._embedded.cast.map((actor) => {
+              console.log('actor in showcard', actor);
+              return <CastComponent actor={actor} />;
+            })}
+          </Row>
+        </Container>
       </div>
-    )
+    </>
   );
+  return content;
 }

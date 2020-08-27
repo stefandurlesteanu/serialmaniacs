@@ -1,0 +1,54 @@
+.show-container {
+  padding: 5vh;
+  margin-top: 10vh;
+  margin-bottom: 5vh;
+  display: flex;
+  position: relative;
+}
+
+.show-info-container {
+  position: relative;
+  margin-top: 4vh;
+}
+
+.show-image-container {
+  position: relative;
+  max-width: 70%;
+  max-height: fit-content;
+  margin-top: 5vh;
+  float: left;
+}
+
+.show-image-container img {
+  position: relative;
+  height: 60vh;
+  width: 100%;
+}
+
+.cards-container {
+  display: block;
+  position: relative;
+  margin-top: 100px;
+}
+
+.row {
+  height: fit-content;
+}
+.col {
+  padding: 0;
+  width: fit-content;
+}
+
+.actor-card-container {
+  background-color: rgb(197, 202, 207);
+  border: 2px solid rgb(151, 153, 155);
+  border-radius: 5px;
+  width: fit-content;
+  height: fit-content;
+  margin-bottom: 2vh;
+}
+
+/* .cast-info-container {
+  position: relative;
+  display: flex;
+} */
