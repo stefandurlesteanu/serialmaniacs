@@ -13,9 +13,8 @@ function App() {
           <Route exact path="/">
             <Home />
           </Route>
-
           <Route path="/shows">
-            <ListedShows/>
+            <ListedShows />
           </Route>
         </div>
       </SerialProvider>
