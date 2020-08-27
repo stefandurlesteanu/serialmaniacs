@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { ShowCard } from './ShowCard';
 import { getData } from './services/getData';
 
 export function ShowPage({ match }) {
@@ -25,7 +24,7 @@ export function ShowPage({ match }) {
       waitForElement();
     }
     fetchData();
-  }, []);
+  }, [url]);
 
   // return <ShowCard serial={serial.serial} />;
   return (

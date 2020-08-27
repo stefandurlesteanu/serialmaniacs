@@ -3,7 +3,6 @@ import "./App.css";
 import { SerialProvider } from "./SerialContext";
 import ListedShows from "./components/ListedShows";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Home from "./Home";
 import { ShowPage } from "./components/ShowPage";
 import Footer from "./components/layout/footer";
 import { default as Nav } from "./components/layout/navBar";

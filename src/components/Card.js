@@ -1,4 +1,4 @@
-import styled, { ThemeProvider } from "styled-components";
+import styled from "styled-components";
 import React from "react";
 import { Link } from "react-router-dom";
 

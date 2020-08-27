@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getData } from "./services/getData";
-import { Carousel, Card, ListGroupItem, ListGroup } from "react-bootstrap";
+import { Card, ListGroupItem, ListGroup } from "react-bootstrap";
 const RandomSerials = (props) => {
 	const initialUrl = "http://api.tvmaze.com/shows";
 	const [serial, setSerial] = useState([]);
