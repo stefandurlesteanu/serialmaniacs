@@ -4,16 +4,11 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { Container, Col, Card, Row } from 'react-bootstrap';
-import styled from 'styled-components';
 import '../../src/fontawesome'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 
-const A = styled.a`
-	text-decoration: 'none';
-	color: 'red' !important;
 
-`
 
 export default function Genres() {
 
@@ -109,7 +104,7 @@ export default function Genres() {
 																	<Col style={{ paddingLeft: "5px" }}>{g.rating}</Col>
 																</Row>
 																<Row>
-																	<Col style={{ textAlign: "left", paddingTop: "10px" }}><A href={`/show/${g.id}`}>{g.name}</A></Col>
+																	<Col style={{ textAlign: "left", paddingTop: "10px" }}><a className="forA" href={`/show/${g.id}`}>{g.name}</a></Col>
 																</Row>
 															</Card.Body>
 														</Card>

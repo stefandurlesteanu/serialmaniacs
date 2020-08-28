@@ -14,15 +14,23 @@ export const HomeWrapper = styled.div`
 		background: yellow !important;
 	}
 
-	.inLkCu{
-		color: #333;
-		font-size: 14px;
-		font-family: 'arial';
-		font-weight: 600;
+	.forA{
+		color: #333 !important;
+		font-size: 14px !important;
+		font-family: 'arial' !important;
+		font-weight: 600 !important;
 	}
-	.inLkCu:hover{
-		color: #000;
-		transition: 0.3s;
+	.forA:hover{
+		color: #000 !important;
+		transition: 0.3s !important;
+	}
+
+	.batmanButton{
+		color: black
+	}
+
+	.batmanButton:hover{
+		color: yellow
 	}
 
 `

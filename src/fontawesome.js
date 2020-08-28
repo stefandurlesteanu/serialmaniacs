@@ -8,7 +8,10 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 
 import {
-	faStar
+	faStar,
+	faStepForward,
+	faStepBackward,
+	faForward
 } from '@fortawesome/free-solid-svg-icons';
 
 library.add(
@@ -16,5 +19,8 @@ library.add(
 	faGoogle,
 	faFacebookF,
 	faTwitter,
-	faStar
+	faStar,
+	faStepForward,
+	faStepBackward,
+	faForward
 );

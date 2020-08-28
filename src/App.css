@@ -1,26 +1,69 @@
 * {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  text-decoration: none;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
 }
 
 .App {
-  position: relative;
-  min-height: 100vh;
+	position: relative;
+	min-height: 100vh;
+	background-color: #201d1b;
 }
 
 .contentWrap {
-  padding-bottom: 20rem;
+	padding-bottom: 20rem;
 }
 
 .color-nav {
-  background-color: #e6eed6;
-  color: #a72608 !important;
+	background-color: #18181a;
 }
 
+.navbar-light .navbar-nav .nav-link {
+	color: white !important;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+	color: yellow !important;
+}
+
+.btn-outline-dark:hover {
+	color: yellow;
+	background-color: #18181a !important;
+	border-color: #18181a !important;
+}
+
+.btn-outline-success {
+	color: yellow !important;
+	border-color: yellow !important;
+}
+
+.btn-outline-success:hover {
+	color: white !important;
+	background-color: white !important;
+	border-color: white !important;
+}
+
+
+.btn:hover {
+	color: yellow;
+	background-color: #18181a !important;
+	border-color: #18181a !important;
+}
+
+.btn-outline-dark {
+	color: transparent !important;
+	border-color: transparent !important;
+}
+
+.btn-outline-dark:hover {
+	color: transparent !important;
+	border-color: transparent !important;
+}
+
+
 @media (max-width: 768px) {
-  .contentWrap {
-    padding-bottom: 47rem;
-  }
+	.contentWrap {
+		padding-bottom: 47rem;
+	}
 }
