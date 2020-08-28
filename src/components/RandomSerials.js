@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import { getData } from "./services/getData";
 import {
 	Card,
-	ListGroupItem,
-	ListGroup,
 	Col,
 	Row,
 	Button

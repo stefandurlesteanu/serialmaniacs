@@ -14,7 +14,7 @@ const StyledPlayer = styled.div`
 
 export default function FrontVideo() {
 
-	const [video, setVideo] = useState([
+	const [video,] = useState([
 		"https://www.youtube.com/watch?v=kzoD3ZEipZM",
 		"https://www.youtube.com/watch?v=iphqRPaaeP8",
 		"https://www.youtube.com/watch?v=yGY484EPe5U",
