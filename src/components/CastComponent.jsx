@@ -3,6 +3,11 @@ import React from 'react';
 // import Image from 'react-bootstrap/Image';
 import Col from 'react-bootstrap/Col';
 import './Show.css';
+import styled from "styled-components";
+
+const P = styled.p`
+	color: black
+`
 
 export default function CastComponent(props) {
   const actor = props.actor;
@@ -14,12 +19,12 @@ export default function CastComponent(props) {
         </div>
         {/* <img src={actor.person.image.medium} /> */}
         {/* <div className='actor-card-body'> */}
-        <p>{actor.person.name}</p>
-        <p>{'(' + actor.character.name + ')'}</p>
+        <P>{actor.person.name}</P>
+        <P>{'(' + actor.character.name + ')'}</P>
         {actor.person.country ? (
-          <p> {actor.person.country.name}</p>
+          <P> {actor.person.country.name}</P>
         ) : (
-          <p>No country available yet</p>
+          <P>No country available yet</P>
         )}
         {/* </div> */}
       </div>

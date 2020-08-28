@@ -5,6 +5,17 @@
 	text-decoration: none;
 }
 
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: white;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
 .App {
 	position: relative;
 	min-height: 100vh;

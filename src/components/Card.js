@@ -33,7 +33,6 @@ const CardData = styled.div`
 `;
 
 const Button = styled.button`
-  font: "sans-serif";
   background: "green";
   font-size: 1.3rem;
   border-color: black;
@@ -41,8 +40,10 @@ const Button = styled.button`
   padding: 7px 10px;
   background: yellow;
   color: black;
+  float: right;
+  margin: 5px 10px 5px 0;
   &:hover {
-    background: blue;
+    background: white;
   }
 `;
 
@@ -68,9 +69,9 @@ const Card = (props) => {
 			</div>
 
 			<CardData>
-				<h2>Title: {props.shows.name}</h2>
-				<h3>Runtime: {props.shows.runtime} </h3>
-				<h4>
+				<h2>{props.shows.name}</h2>
+				<h3 style={{ fontSize: "16px" }}>Runtime: {props.shows.runtime} </h3>
+				<h4 style={{ fontSize: "16px" }}>
 					Summary:{" "}
 					<span
 						dangerouslySetInnerHTML={{
