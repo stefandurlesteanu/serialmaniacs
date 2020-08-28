@@ -27,9 +27,9 @@ export default function navBar() {
 					<Nav.Link href='/shows'>Shows</Nav.Link>
 					<Nav.Link href='/genres'>Genres</Nav.Link>
 					<NavDropdown title='More' id='basic-nav-dropdown'>
-						<NavDropdown.Item href='#/'>Best Shows</NavDropdown.Item>
-						<NavDropdown.Item href='#/'>Most Wanted</NavDropdown.Item>
-						<NavDropdown.Item href='#/'>ActorPedia</NavDropdown.Item>
+						<NavDropdown.Item href='https://www.imdb.com/best-of/?ref_=nv_sr_srsg_0'>Best Shows</NavDropdown.Item>
+						<NavDropdown.Item href='https://www.imdb.com/what-to-watch/?ref_=nv_watch'>What to watch</NavDropdown.Item>
+						<NavDropdown.Item href='https://en.wikipedia.org/wiki/Lists_of_actors'>ActorsPedia</NavDropdown.Item>
 						<NavDropdown.Divider />
 						<NavDropdown.Item href='#footerLink'>Contact Us</NavDropdown.Item>
 					</NavDropdown>

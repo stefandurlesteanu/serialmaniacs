@@ -4,14 +4,16 @@ import {
 	faGithubAlt,
 	faGoogle,
 	faFacebookF,
-	faTwitter
+	faTwitter,
+	faLinkedin
 } from '@fortawesome/free-brands-svg-icons';
 
 import {
 	faStar,
 	faStepForward,
 	faStepBackward,
-	faForward
+	faForward,
+	faEnvelope
 } from '@fortawesome/free-solid-svg-icons';
 
 library.add(
@@ -22,5 +24,7 @@ library.add(
 	faStar,
 	faStepForward,
 	faStepBackward,
-	faForward
+	faForward,
+	faLinkedin,
+	faEnvelope
 );
