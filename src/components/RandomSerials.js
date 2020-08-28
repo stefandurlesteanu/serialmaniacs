@@ -75,12 +75,12 @@ const RandomSerials = (props) => {
 					<h1>'Loading ...'</h1>
 				) : (
 						<>
-							<Card.Header style={{ textAlign: "center" }}><h5>Pogar recommends</h5></Card.Header>
+							<Card.Header style={{ textAlign: "center" }}><h5 style={{ color: "black" }}>Pogar recommends</h5></Card.Header>
 							<Card.Img variant="bottom" src={serial[slide].image.medium} />
 							<Card.Body style={{ padding: ".1rem 1.25rem" }}>
-								<Card.Title> Title: {serial[slide].name}</Card.Title>
+								<Card.Title> Title: <a style={{ color: "black" }} alt="" href={`/show/${serial[slide].id}`}>{serial[slide].name}</a></Card.Title>
 								<div style={{ display: 'block' }}>
-									<Card.Text style={{ float: "left", marginBottom: ".3rem" }}>Genres: {serial[slide].genres[0]}</Card.Text>
+									<Card.Text style={{ float: "left", marginBottom: ".3rem", color: "black" }}>Genres: {serial[slide].genres[0]}</Card.Text>
 									<Row style={{ float: "right" }}>
 										<FontAwesomeIcon
 											icon={["fa", "star"]}
