@@ -15,9 +15,11 @@
   * Genres Page:
     * Shows sorted by genres, each show in separate card
     
-* Design:
-  * CSS/SASS
+* Tech Stack:
+  * React.js / Context API
+  * CSS (& Styled CSS) / SASS 
   * Bootstrap
   * Vanilla JS
+  * Netlify
     
   
