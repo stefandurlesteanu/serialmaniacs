@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import ReactPlayer from "react-player";
 import { Button } from 'react-bootstrap';
 import styled from "styled-components";
-import '../../src/fontawesome'
+import '../fontawesome'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 

@@ -41,14 +41,16 @@ const PictureSizeType = new GraphQLObjectType({
 
 
 //Root Query
-
 const RootQuery = new GraphQLObjectType({
 	name: 'RootQueryType',
 	fields: {
 		shows: {
 			type: new GraphQLList(ShowsType),
+			args: {
+				page_number: { type: GraphQLString }
+			},
 			resolve(parent, args) {
-				return axios.get('http://api.tvmaze.com/shows')
+				return axios.get(`http://api.tvmaze.com/shows?page=${args.page_number}`)
 					.then(res => res.data);
 			}
 		}
