@@ -6,7 +6,25 @@ import Slider from "react-slick";
 import { Container, Col, Card, Row } from 'react-bootstrap';
 import '../../src/fontawesome'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import gql from 'graphql-tag';
+import { Query } from '@apollo/client';
 
+
+const SHOWS_QUERY = gql`
+	query ShowsQuery {
+		shows {
+			id,
+			name,
+			genres,
+			rating{
+			  average
+			},
+			image {
+			  medium
+			}
+		  }
+	}
+`;
 
 
 
@@ -74,8 +92,7 @@ export default function Genres() {
 
 
 	return (
-
-		<div>
+				<div>
 			{
 				genres.length === 0 ? <h1>Loading...</h1> : (
 					<>
