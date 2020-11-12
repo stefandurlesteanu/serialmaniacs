@@ -7,7 +7,6 @@ export default function ListedShows() {
 	const [serial] = loadedSerial;
 	const [, setLoading] = loadingData;
 	const [load, setLoad] = useState(false);
-	console.log(serial);
 
 	useEffect(() => {
 		function waitForElement() {
@@ -26,6 +25,7 @@ export default function ListedShows() {
 		waitForElement();
 	}, [load, serial, setLoading]);
 
+	console.log(serial);
 	return (
 		<div>
 			{load ? (
@@ -39,4 +39,5 @@ export default function ListedShows() {
 				)}
 		</div>
 	);
+	
 }

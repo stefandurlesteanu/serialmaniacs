@@ -7,24 +7,7 @@ import { Container, Col, Card, Row } from 'react-bootstrap';
 import '../../src/fontawesome'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import gql from 'graphql-tag';
-import { Query } from '@apollo/client';
 
-
-const SHOWS_QUERY = gql`
-	query ShowsQuery {
-		shows {
-			id,
-			name,
-			genres,
-			rating{
-			  average
-			},
-			image {
-			  medium
-			}
-		  }
-	}
-`;
 
 
 
@@ -112,7 +95,7 @@ export default function Genres() {
 														<Card border="transparent">
 															<Card.Img
 																variant="top"
-																src={g.image}
+																src=""
 																alt=""
 															/>
 															<Card.Body style={{ minHeight: '110px', paddingBottom: "0" }}>
@@ -121,7 +104,7 @@ export default function Genres() {
 																	<Col style={{ paddingLeft: "5px" }}>{g.rating}</Col>
 																</Row>
 																<Row>
-																	<Col style={{ textAlign: "left", paddingTop: "10px" }}><a className="forA" href={`/show/${g.id}`}>{g.name}</a></Col>
+																	<Col style={{ textAlign: "left", paddingTop: "10px" }}><a className="forA" href="#">d</a></Col>
 																</Row>
 															</Card.Body>
 														</Card>

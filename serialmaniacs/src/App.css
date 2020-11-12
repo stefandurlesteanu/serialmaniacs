@@ -55,6 +55,11 @@ h6 {
 	border-color: white !important;
 }
 
+.disabled {
+	display: none !important;
+
+}
+
 
 .btn:hover {
 	color: yellow;
@@ -77,4 +82,9 @@ h6 {
 	.contentWrap {
 		padding-bottom: 47rem;
 	}
+}
+
+
+.none  {
+	display: none;
 }
