@@ -10,10 +10,7 @@ import { Container, Col, Button, Row } from 'react-bootstrap';
 
 export default function NewGenres({ match }) {
 
-	useEffect(() => {
-		var name = document.getElementById('prevButton')
-		console.log(name);
-	  }, [])
+	
 
 	let page_number = match.params.id;
 	let next_page = (parseInt(page_number)+1) + "";
@@ -46,7 +43,7 @@ export default function NewGenres({ match }) {
 		variables: { page_number, next_page},
 		errorPolicy: 'ignore',
 	});
-	let genres_map = new Map();
+	
 
 	if (loading) return <p>Loading...</p>;
 	if (data.current_page === null) return <p>No more show here, please go to previous pages</p>;
@@ -54,6 +51,7 @@ export default function NewGenres({ match }) {
 	if (page_number === "0") prevButtonStatus = true;
 
 
+	let genres_map = new Map();
 	data.current_page.forEach(show => {
 		show.genres.forEach(genre => {
 			if(genres_map.has(genre)){
